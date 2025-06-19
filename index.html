@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insight View</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.5.1"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="progress-wrapper">
+                <div id="progress-percentage">0%</div>
+                <div id="progress-bar-container">
+                    <div id="progress-bar"></div>
+                </div>
+            </div>
+            <div class="insight-view-animated-text">
+                <span id="insight-text-animated">Insight</span>
+                <span id="view-text-animated">View</span>
+            </div>
+            <div id="vertical-line"></div>
+        </div>
+    </div>
+
+    <div id="page-scroll-progress-container">
+        <div id="page-scroll-progress-bar"></div>
+    </div>
+
+    <div id="main-content">
+        <header id="main-header">
+            <div class="logo">InsightView</div>
+            <nav>
+                <a href="#hero-section" class="nav-link">Home</a>
+                <a href="#features-section-container" class="nav-link">Features</a>
+                <a href="#data-insights-section" class="nav-link">Data Insights</a>
+                <a href="#contact-section" class="nav-link">Contact</a>
+            </nav>
+            <button class="cta-button" aria-label="Get Started">Get Started</button>
+        </header>
+
+        <main>
+            <section id="hero-section" class="scroll-section">
+                <div class="section-content hero-content">
+                    <h1 class="parallax-element" data-speed="0.5">Discover the Future <br>with InsightView</h1>
+                    <p class="parallax-element" data-speed="0.3">Unveiling clarity from complexity. Your journey to smarter decisions starts here.</p>
+                    <button class="cta-button primary-button" aria-label="Explore Features">Explore Features</button>
+                </div>
+            </section>
+
+            <section id="about-section" class="scroll-section">
+                <div class="section-content">
+                    <h2 class="parallax-element" data-speed="0.4">Transforming Data into Action</h2>
+                    <p class="parallax-element" data-speed="0.2">We provide cutting-edge tools to analyze, organize, and react to your business environment in real-time. Experience unparalleled efficiency and growth.</p>
+                </div>
+            </section>
+
+            <section id="features-section-container" class="scroll-section">
+                <h2>Core Capabilities</h2>
+                <div id="features-section">
+                    <div class="feature-card-wrapper">
+                        <div class="feature-card active-feature" data-feature-index="0">
+                            <div class="feature-icon">⚡</div>
+                            <h3>AI Analytics</h3>
+                            <p>Predict patterns with precision using our advanced AI.</p>
+                            <button class="more-info-button" data-modal-target="ai-analytics-modal" aria-label="More info on AI Analytics">More Info</button>
+                            <div class="feature-progress-loader"><div class="loader-bar"></div></div>
+                        </div>
+                    </div>
+                    <div class="feature-card-wrapper">
+                         <div class="feature-card" data-feature-index="1">
+                            <div class="feature-icon">💼</div>
+                            <h3>Product Suite</h3>
+                            <p>Organize offers & catalogs seamlessly with our integrated suite.</p>
+                            <button class="more-info-button" data-modal-target="product-suite-modal" aria-label="More info on Product Suite">More Info</button>
+                            <div class="feature-progress-loader"><div class="loader-bar"></div></div>
+                        </div>
+                    </div>
+                    <div class="feature-card-wrapper">
+                        <div class="feature-card" data-feature-index="2">
+                            <div class="feature-icon">🔔</div>
+                            <h3>Real-time Events</h3>
+                            <p>Real-time alerts and dashboards to keep you ahead.</p>
+                            <button class="more-info-button" data-modal-target="realtime-events-modal" aria-label="More info on Real-time Events">More Info</button>
+                            <div class="feature-progress-loader"><div class="loader-bar"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-nav-dots">
+                    <span class="dot active" data-feature-index="0"></span>
+                    <span class="dot" data-feature-index="1"></span>
+                    <span class="dot" data-feature-index="2"></span>
+                </div>
+            </section>
+            
+            <section id="data-insights-section" class="scroll-section">
+                <div class="section-content">
+                    <h2 class="parallax-element" data-speed="0.4">Data & Performance Insights</h2>
+                    <p class="parallax-element" data-speed="0.2">Key metrics and trends at a glance. Understand your impact and progress.</p>
+
+                    <div class="kpi-cards-container">
+                        <div class="kpi-card">
+                            <h4>Managed portfolio carbon footprint</h4>
+                            <p class="kpi-value">45,048 <span class="kpi-unit">tCO₂e</span></p>
+                            <p class="kpi-trend up"><span class="arrow">↑</span> 16% <span class="trend-from">from 2019</span></p>
+                            <div class="mini-bar-chart">
+                                <div class="year-data"><div class="bar-wrapper"><div class="mini-bar" style="height: 70%;" aria-label="38,673 for 2019"></div></div><span class="year">2019</span></div>
+                                <div class="year-data"><div class="bar-wrapper"><div class="mini-bar" style="height: 60%;" aria-label="32,813 for 2020"></div></div><span class="year">2020</span></div>
+                                <div class="year-data"><div class="bar-wrapper"><div class="mini-bar" style="height: 25%;" aria-label="14,111 for 2021"></div></div><span class="year">2021</span></div>
+                                <div class="year-data"><div class="bar-wrapper"><div class="mini-bar" style="height: 80%;" aria-label="45,048 for 2022"></div></div><span class="year">2022</span></div>
+                            </div>
+                        </div>
+                        <div class="kpi-card">
+                            <h4>Managed portfolio energy intensity</h4>
+                            <p class="kpi-value">123 <span class="kpi-unit">kWh/m²</span></p>
+                            <p class="kpi-trend down"><span class="arrow">↓</span> 22% <span class="trend-from">from 2019</span></p>
+                             <div class="mini-bar-chart">
+                                <div class="year-data"><div class="bar-wrapper"><div class="mini-bar" style="height: 85%;" aria-label="157 for 2019"></div></div><span class="year">2019</span></div>
+                                <div class="year-data"><div class="bar-wrapper"><div class="mini-bar" style="height: 75%;" aria-label="135 for 2020"></div></div><span class="year">2020</span></div>
+                                <div class="year-data"><div class="bar-wrapper"><div class="mini-bar" style="height: 70%;" aria-label="128 for 2021"></div></div><span class="year">2021</span></div>
+                                <div class="year-data"><div class="bar-wrapper"><div class="mini-bar" style="height: 65%;" aria-label="123 for 2022"></div></div><span class="year">2022</span></div>
+                            </div>
+                        </div>
+                        <div class="kpi-card">
+                            <h4>Managed portfolio energy consumption</h4>
+                            <p class="kpi-value">47,790,662 <span class="kpi-unit">kWh</span></p>
+                            <p class="kpi-trend down"><span class="arrow">↓</span> 27% <span class="trend-from">from 2019</span></p>
+                            <div class="mini-bar-chart">
+                                <div class="year-data"><div class="bar-wrapper"><div class="mini-bar" style="height: 90%;" aria-label="65,138,706 for 2019"></div></div><span class="year">2019</span></div>
+                                <div class="year-data"><div class="bar-wrapper"><div class="mini-bar" style="height: 75%;" aria-label="48,784,205 for 2020"></div></div><span class="year">2020</span></div>
+                                <div class="year-data"><div class="bar-wrapper"><div class="mini-bar" style="height: 80%;" aria-label="49,324,077 for 2021"></div></div><span class="year">2021</span></div>
+                                <div class="year-data"><div class="bar-wrapper"><div class="mini-bar" style="height: 70%;" aria-label="47,790,662 for 2022"></div></div><span class="year">2022</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="main-chart-area">
+                        <h3>Embodied Carbon Emissions</h3>
+                        <p class="chart-subtitle">Intensity measured by kgCO₂e/m²</p>
+                        <div class="chart-wrapper">
+                            <div class="y-axis-labels">
+                                <span aria-hidden="true">1000</span>
+                                <span aria-hidden="true">800</span>
+                                <span aria-hidden="true">600</span>
+                                <span aria-hidden="true">400</span>
+                                <span aria-hidden="true">200</span>
+                                <span aria-hidden="true">0</span>
+                            </div>
+                            <div class="bar-chart-graph" role="graphics-document" aria-label="Embodied Carbon Emissions Bar Chart">
+                                <div class="chart-grid-lines">
+                                    <div></div><div></div><div></div><div></div><div></div><div></div>
+                                </div>
+                                <div class="chart-bar-group">
+                                    <div class="chart-bar" style="height: 54.9%;" ><span class="bar-value">549</span></div>
+                                    <span class="bar-label">Site A</span>
+                                </div>
+                                <div class="chart-bar-group">
+                                    <div class="chart-bar" style="height: 27.8%;" ><span class="bar-value">278</span></div>
+                                    <span class="bar-label">Site B</span>
+                                </div>
+                                <div class="chart-bar-group">
+                                    <div class="chart-bar" style="height: 87.5%;" ><span class="bar-value">875</span></div>
+                                    <span class="bar-label">Site C</span>
+                                </div>
+                                <div class="chart-bar-group">
+                                    <div class="chart-bar" style="height: 61.7%;" ><span class="bar-value">617</span></div>
+                                    <span class="bar-label">Site D</span>
+                                </div>
+                                 <div class="chart-bar-group">
+                                    <div class="chart-bar" style="height: 50.6%;" ><span class="bar-value">506</span></div>
+                                    <span class="bar-label">Site E</span>
+                                </div>
+                                <div class="chart-bar-group">
+                                    <div class="chart-bar" style="height: 88.1%;" ><span class="bar-value">881</span></div>
+                                    <span class="bar-label">Site F</span>
+                                </div>
+                                <div class="chart-bar-group">
+                                    <div class="chart-bar" style="height: 53.9%;" ><span class="bar-value">539</span></div>
+                                    <span class="bar-label">Site G</span>
+                                </div>
+                                <div class="chart-bar-group">
+                                    <div class="chart-bar" style="height: 60.7%;" ><span class="bar-value">607</span></div>
+                                    <span class="bar-label">Site H</span>
+                                </div>
+                                <div class="chart-bar-group">
+                                    <div class="chart-bar" style="height: 52.9%;"><span class="bar-value">529</span></div>
+                                    <span class="bar-label">Site I</span>
+                                </div>
+                            </div>
+                        </div>
+                         <a href="#" class="download-data-link" aria-label="Download embodied carbon emissions data">Download the data <span class="icon" aria-hidden="true">↓</span></a>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="contact-section" class="scroll-section">
+                <div class="section-content">
+                    <h2>Get in Touch</h2>
+                    <p>Ready to elevate your business? Contact us today.</p>
+                    <form id="contact-form">
+                        <input type="text" placeholder="Your Name" aria-label="Your Name" required>
+                        <input type="email" placeholder="Your Email" aria-label="Your Email" required>
+                        <textarea placeholder="Your Message" aria-label="Your Message" rows="4" required></textarea>
+                        <button type="submit" class="cta-button primary-button" aria-label="Send Message">Send Message</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 InsightView. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <div id="modal-overlay" class="hidden">
+        <div id="modal-container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button id="modal-close-button" aria-label="Close modal">&times;</button>
+            <h3 id="modal-title">Modal Title</h3>
+            <div id="modal-body">
+                <p>Modal content goes here.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Definitions -->
+    <div id="ai-analytics-modal" class="modal-content-template" style="display: none;">
+        <h3 data-title>AI Analytics</h3>
+        <p>Our AI Analytics engine leverages state-of-the-art machine learning algorithms to sift through vast datasets, identify emerging trends, and provide actionable predictions. Enhance your decision-making with unparalleled accuracy and foresight.</p>
+        <ul>
+            <li>Predictive Modeling</li>
+            <li>Anomaly Detection</li>
+            <li>Customer Segmentation</li>
+            <li>Risk Assessment</li>
+        </ul>
+    </div>
+    <div id="product-suite-modal" class="modal-content-template" style="display: none;">
+        <h3 data-title>Product Suite</h3>
+        <p>Streamline your operations with our comprehensive Product Suite. Manage your offerings, catalogs, inventory, and customer interactions all from a single, intuitive platform. Designed for scalability and ease of use.</p>
+        <ul>
+            <li>Catalog Management</li>
+            <li>Inventory Control</li>
+            <li>Order Processing</li>
+            <li>CRM Integration</li>
+        </ul>
+    </div>
+    <div id="realtime-events-modal" class="modal-content-template" style="display: none;">
+        <h3 data-title>Real-time Events</h3>
+        <p>Stay informed and agile with our Real-time Events system. Receive instant notifications for critical occurrences, monitor key performance indicators via dynamic dashboards, and respond proactively to market changes.</p>
+        <ul>
+            <li>Customizable Alerts</li>
+            <li>Live Dashboards</li>
+            <li>Event Streaming</li>
+            <li>Automated Responses</li>
+        </ul>
+    </div>
+
+    <div id="cursor-follower"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
